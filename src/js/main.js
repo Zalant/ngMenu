@@ -1,0 +1,11 @@
+//= partials/jquery.js
+//= partials/bootstrap.js
+//= partials/jasny-bootstrap.js
+//= partials/angular.js
+//= partials/angular-ui-router.js
+//= partials/ngStorage.js
+//= partials/navbar.module.js
+//= partials/navbar.provider.js
+//= partials/navbar.controller.js
+//= partials/navbar.directive.js
+//= partials/changeside.controller.js
