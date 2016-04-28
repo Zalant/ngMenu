@@ -2,6 +2,7 @@ node_modules/
 bower_components/
 coverage/
 nbproject/
+gulp/
 e2e/
 .sass-cache/
 .idea/
@@ -10,4 +11,4 @@ dist/
 .bowerrc
 .editorconfig
 .eslintrc
-*.conf
+*.conf.js

@@ -1,62 +1,60 @@
 <!doctype html>
 <html ng-app="navbar">
-    <head>
-        <meta charset="utf-8">
-        <title>dsrproject</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<head>
+  <meta charset="utf-8">
+  <title>dsrproject</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
-    </head>
-    <body>
-
-        
-        
-        <script src="js/partials/jquery.js" type="text/javascript"></script>
-        <script src="js/partials/bootstrap.js" type="text/javascript"></script>
-        <script src="js/partials/jasny-bootstrap.js" type="text/javascript"></script>
-        <script src="js/partials/angular.js" type="text/javascript"></script>
-<!--        <script src="js/partials/angular-route.js" type="text/javascript"></script>-->
-        <script src="js/partials/angular-ui-router.js" type="text/javascript"></script>
-        <script src="js/partials/ngStorage.js" type="text/javascript"></script>
-        
-        
-        <script src="js/partials/navbar.module.js" type="text/javascript"></script>
-        <script src="js/partials/navbar.provider.js" type="text/javascript"></script>
-        <script src="js/partials/navbar.controller.js" type="text/javascript"></script>
-        <script src="js/partials/navbar.directive.js" type="text/javascript"></script>
-        <script src="js/partials/changeside.controller.js" type="text/javascript"></script>
-        
-        <link href="style/partials/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="style/partials/jasny-bootstrap.css" rel="stylesheet" type="text/css"/>
-        
-        <!--        <script>
-          $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
-                // Avoid following the href location when clicking
-                event.preventDefault();
-                // Avoid having the menu to close when clicking
-                event.stopPropagation();
-            })
-               
-        
-        </script>-->
-
-        <div ng-controller="menuCtrl" area-expanded="true">
-            <div ng-controller="changesideCtrl" area-expanded="true">
-                <div>
-                    <button type="button" class="btn btn-info {{$storage.savedbuttonside}} " data-toggle="offcanvas" data-target="#exampleMenu" data-canvas="body" >
-                        Menu
-                    </button>
-                </div>
-
-                <div  id="exampleMenu" navbarmenu class="{{$storage.savedside}}"></div>
-
-                <ui-view> </ui-view>
-
-            </div>
-        </div>
+</head>
+<body>
 
 
+<script src="js/system/jquery.js" type="text/javascript"></script>
+<script src="js/system/bootstrap.js" type="text/javascript"></script>
+<script src="js/system/jasny-bootstrap.js" type="text/javascript"></script>
+<script src="js/system/angular.js" type="text/javascript"></script>
+<script src="js/system/angular-ui-router.js" type="text/javascript"></script>
+<script src="js/system/ngStorage.js" type="text/javascript"></script>
 
-    </body>
+
+<script src="js/navbar/navbar.module.js" type="text/javascript"></script>
+<script src="js/navbar/navbar.controller.js" type="text/javascript"></script>
+<script src="js/navbar/navbar.directive.js" type="text/javascript"></script>
+<script src="js/partials/changeside.controller.js" type="text/javascript"></script>
+
+<link href="style/system/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="style/system/jasny-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="style/custom/navbar.style.css" rel="stylesheet" type="text/css"/>
+
+<!--        <script>
+  $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+        // Avoid following the href location when clicking
+        event.preventDefault();
+        // Avoid having the menu to close when clicking
+        event.stopPropagation();
+    })
+
+
+</script>-->
+
+<div ng-controller="menuCtrl" area-expanded="true">
+  <div ng-controller="changesideCtrl" area-expanded="true">
+    <div>
+      <button type="button" class="btn btn-black {{$storage.savedbuttonside}} " data-toggle="offcanvas"
+              data-target="#exampleMenu" data-canvas="body">
+        Menu
+      </button>
+    </div>
+
+    <div id="exampleMenu" navbarmenu menu-items-list= "menuList" class="{{$storage.savedside}}"></div>
+
+    <ui-view></ui-view>
+
+  </div>
+</div>
+
+
+</body>
 </html>
