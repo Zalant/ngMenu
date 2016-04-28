@@ -6762,70 +6762,70 @@ button.close {
 /*видоизменяем классы. надо будет создать отдельный css*/
 
 
-.buttonleft { float: left
-}
-.buttonright { float: right }
+/*.buttonleft { float: left*/
+/*}*/
+/*.buttonright { float: right }*/
 
-.dropdown-menu:hover{display:block;}
+/*.dropdown-menu:hover{display:block;}*/
 
 
-.btn-info {
-  color: #fff;
-  background-color: #222;
-  border-color: #222;
-}
-.btn-info:focus,
-.btn-info.focus {
-  color: #fff;
-  background-color: #222;
-  border-color: #222;
-}
-.btn-info:hover {
-  color: #fff;
-  background-color: #222;
-  border-color: #222;
-}
-.btn-info:active,
-.btn-info.active,
-.open > .dropdown-toggle.btn-info {
-  color: #fff;
-  background-color: #222;
-  border-color: #222;
-}
-.btn-info:active:hover,
-.btn-info.active:hover,
-.open > .dropdown-toggle.btn-info:hover,
-.btn-info:active:focus,
-.btn-info.active:focus,
-.open > .dropdown-toggle.btn-info:focus,
-.btn-info:active.focus,
-.btn-info.active.focus,
-.open > .dropdown-toggle.btn-info.focus {
-  color: #fff;
-  background-color: #222;
-  border-color: #222;
-}
-.btn-info:active,
-.btn-info.active,
-.open > .dropdown-toggle.btn-info {
-  background-image: none;
-}
-.btn-info.disabled:hover,
-.btn-info[disabled]:hover,
-fieldset[disabled] .btn-info:hover,
-.btn-info.disabled:focus,
-.btn-info[disabled]:focus,
-fieldset[disabled] .btn-info:focus,
-.btn-info.disabled.focus,
-.btn-info[disabled].focus,
-fieldset[disabled] .btn-info.focus {
-  background-color: #222;
-  border-color: #222;
-}
-.btn-info .badge {
-  color: #222;
-  background-color: #fff;
-}
+/*.btn-info {*/
+  /*color: #fff;*/
+  /*background-color: #222;*/
+  /*border-color: #222;*/
+/*}*/
+/*.btn-info:focus,*/
+/*.btn-info.focus {*/
+  /*color: #fff;*/
+  /*background-color: #222;*/
+  /*border-color: #222;*/
+/*}*/
+/*.btn-info:hover {*/
+  /*color: #fff;*/
+  /*background-color: #222;*/
+  /*border-color: #222;*/
+/*}*/
+/*.btn-info:active,*/
+/*.btn-info.active,*/
+/*.open > .dropdown-toggle.btn-info {*/
+  /*color: #fff;*/
+  /*background-color: #222;*/
+  /*border-color: #222;*/
+/*}*/
+/*.btn-info:active:hover,*/
+/*.btn-info.active:hover,*/
+/*.open > .dropdown-toggle.btn-info:hover,*/
+/*.btn-info:active:focus,*/
+/*.btn-info.active:focus,*/
+/*.open > .dropdown-toggle.btn-info:focus,*/
+/*.btn-info:active.focus,*/
+/*.btn-info.active.focus,*/
+/*.open > .dropdown-toggle.btn-info.focus {*/
+  /*color: #fff;*/
+  /*background-color: #222;*/
+  /*border-color: #222;*/
+/*}*/
+/*.btn-info:active,*/
+/*.btn-info.active,*/
+/*.open > .dropdown-toggle.btn-info {*/
+  /*background-image: none;*/
+/*}*/
+/*.btn-info.disabled:hover,*/
+/*.btn-info[disabled]:hover,*/
+/*fieldset[disabled] .btn-info:hover,*/
+/*.btn-info.disabled:focus,*/
+/*.btn-info[disabled]:focus,*/
+/*fieldset[disabled] .btn-info:focus,*/
+/*.btn-info.disabled.focus,*/
+/*.btn-info[disabled].focus,*/
+/*fieldset[disabled] .btn-info.focus {*/
+  /*background-color: #222;*/
+  /*border-color: #222;*/
+/*}*/
+/*.btn-info .badge {*/
+  /*color: #222;*/
+  /*background-color: #fff;*/
+/*}*/
 
 
 

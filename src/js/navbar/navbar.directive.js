@@ -4,13 +4,13 @@
     .directive('navbarmenu', [function () {
       return {
         restrict: 'A',
+        scope:
+        {menuItemsList: '='},
         templateUrl: 'template/navbar.template.html',
-        link: function ($scope, $elem, $attr) {
-         // $scope.showingmenu = ($attr.menuItems);
-          $elem.attr('role', 'navigation');
-          // console.log($scope.showingmenu);
-
-        }
+        link: function (scope, elem, attr) {
+          scope.showingmenu = attr.menuItemsList;
+          elem.attr('role', 'navigation');
+       }
       };
     }])
 

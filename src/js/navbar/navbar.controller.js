@@ -1,10 +1,11 @@
 'use strict';
 (function (angular) {
   angular.module('navbar')
-    .controller('menuCtrl', ['$scope', function ($scope) {
+    .controller('menuCtrl', ['$scope','$state', function ($scope,$state) {
 
 
       //Здесь задаются пункты меню. Состояния к ним прописываются в navbar.module.js
+      $scope.states = $state;
 
       var mymenu = [{name: 'Main', url: '#', state: 'main'},
         {name: 'test-1', url: '#', state: 'test-1'},
@@ -32,11 +33,8 @@
 
       var menuItems = [];
       for (var i = 0; i < mymenu.length; i++) {
-
         add(mymenu[i]);
-
       }
-
       createDependence();
 
 
@@ -51,7 +49,7 @@
         }
 
       };
-      
+
       //Проверка есть ли у элемента подпункты
 
       function checkElement(obj, menuItems) {
@@ -94,9 +92,31 @@
         return;
       };
 
-      $scope.menuList = menuItems;
-      console.log($scope.menuList);
 
-      ;
+      $scope.menuList = menuItems;
+      
+
+      // function checkState() {
+      //   console.log($state.current.name);
+      // }
+      // document.onmousedown = checkState;
+
+      // function checkClick(evt)
+      // {
+      //   evt = (evt) ? evt : event;
+      //   if(evt.shiftKey)
+      //   {
+      //     console.log(
+      //       "Нажата клавиша Shift");
+      //   }
+      //   else
+      //   {
+      //     console.log(
+      //       "Клавиша Shift не нажата");
+      //   }
+      // }
+      // document.onmousedown = checkClick;
+
+
     }]);
 })(window.angular);

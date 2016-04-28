@@ -7,19 +7,19 @@
                         $stateProvider
                                 .state('main', {
                                     url: '/main',
-                                    templateUrl: 'mainpage.html'
+                                    templateUrl: 'states/mainpage.html'
                                 })
                                 .state('test-1', {
                                     url: '/test1',
-                                    templateUrl: 'test-1.html'
+                                    templateUrl: 'states/test-1.html'
                                 })
                                 .state('test-3', {
                                     url: '/test3',
-                                    templateUrl: 'test-3.html'
+                                    templateUrl: 'states/test-3.html'
                                 })
                                 .state('test-7', {
                                     url: '/test7',
-                                    templateUrl: 'test-7.html'
+                                    templateUrl: 'states/test-7.html'
                                 })
                               ;
 
