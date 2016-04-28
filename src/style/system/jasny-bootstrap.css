@@ -139,7 +139,7 @@
 }
 .navmenu,
 .navbar-offcanvas {
-  width: 300px;
+  width: 220px;
   height: auto;
   border-style: solid;
   border-width: 1px;
@@ -380,7 +380,7 @@
 }
 .navmenu-inverse .navmenu-nav > li > a,
 .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a {
-  color: #999;
+  color: #90C7FD;
 }
 .navmenu-inverse .navmenu-nav > li > a:hover,
 .navbar-inverse .navbar-offcanvas .navmenu-nav > li > a:hover,

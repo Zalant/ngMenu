@@ -4,27 +4,27 @@
 
 .dropdown-menu:hover{display:block;}
 
-
 .btn-black {
+  font-size: 16px;
   color: #fff;
-  background-color: #222;
+  background-color: #696B75;
   border-color: #222;
 }
 .btn-black:focus,
 .btn-black.focus {
-  color: #fff;
+  color: #90C7FD;
   background-color: #222;
   border-color: #222;
 }
 .btn-black:hover {
-  color: #fff;
+  color: #90C7FD;
   background-color: #222;
   border-color: #222;
 }
 .btn-black:active,
 .btn-black.active,
 .open > .dropdown-toggle.btn-black {
-  color: #fff;
+  color: #90C7FD;
   background-color: #222;
   border-color: #222;
 }
@@ -37,7 +37,7 @@
 .btn-black:active.focus,
 .btn-black.active.focus,
 .open > .dropdown-toggle.btn-black.focus {
-  color: #fff;
+  color: #90C7FD;
   background-color: #222;
   border-color: #222;
 }
@@ -59,6 +59,24 @@ fieldset[disabled] .btn-black.focus {
   border-color: #222;
 }
 .btn-black .badge {
-  color: #222;
+  color: #90C7FD;
   background-color: #fff;
+}
+/*Перебью цвет body и мб другие параметры*/
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #E9F3FD;
+}
+
+.dropdown-menu {
+  font-size: 16px;
+}
+
+/*Цвет пунктов меню*/
+.navbar-inverse .navbar-offcanvas .navmenu-nav > li > a {
+  color: #90C7FD;
 }
