@@ -109,6 +109,15 @@
         return;
       };
 
+       $scope.setActive = function(elem) {
+        var li = document.getElementsByTagName('li')
+    for (var i = 0; i < li.length; i++) {
+      li[i].classList.remove('active')
+    }
+        elem.classList.add('active');
+      }
+
+
       $scope.menuList = menuItems;
 
     }]);

@@ -18,14 +18,14 @@ var path = {
         css: 'build/css/'
     },
     src: {
-        html: 'src/*.html',
+        html: 'src/**/[^_]*.html',
         js: 'src/js/main.js',
-        style: 'src/style/main.scss'
+        style: 'src/style/main.css'
     },
     watch: {//Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
-        style: 'src/style/**/*.scss'
+        style: 'src/style/**/*.css'
     },
     clean: './build'
 };
@@ -39,6 +39,12 @@ var config = {
     port: 8383,
     logPrefix: "Zalant"
 };
+
+gulp.task('css:sass', function () {
+  gulp.src('src/style/custom/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('src/style'));
+});
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html)
@@ -58,15 +64,19 @@ gulp.task('js:build', function () {
 });
 
 gulp.task('style:build', function () {
-    gulp.src(path.src.style)
+
+  gulp.src(path.src.style)
+    .pipe(rigger())
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(prefixer())
             .pipe(cleancss())
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest(path.build.css)); 
+            .pipe(gulp.dest(path.build.css));
 
 });
+
+gulp.task('build',['js:build', 'style:build', 'html:build'] );
 
 gulp.task('watch', function () {
     watch([path.watch.html], function (event, cb) {

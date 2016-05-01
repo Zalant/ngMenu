@@ -39,6 +39,27 @@
 
 </script>
 
+
+<!--<script>-->
+  <!--function setActive(elem) {-->
+    <!--var a = document.getElementsByTagName('li')-->
+   <!--for (var i = 0; i < li.length; i++) {-->
+     <!--li[i].classList.remove('active')-->
+   <!--}-->
+    <!--elem.classList.add('active');-->
+<!--}-->
+<!--</script>-->
+
+<script>
+
+  $("a").click(function(){
+    $("li").addClass("active");
+    console.log('err')
+  });
+</script>
+
+
+
 <div ng-controller="menuCtrl" area-expanded="true">
   <div ng-controller="changesideCtrl" area-expanded="true">
     <div>

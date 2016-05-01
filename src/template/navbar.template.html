@@ -1,10 +1,10 @@
 <ul class="nav navmenu-nav">
-  <li ><a href="configure.html" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Configure menu</a></li>
-  <li ng-repeat="items in menuItemsList" ng-if="items !== null">
-    <a href="#" ng-if="!items.location.pop && !items.submenu" ui-sref="{{items.state}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  {{items.name}}</a>
-    <a href="#" ng-if="items.location.pop && !items.submenu" class="dropdown-toggle"  data-toggle="dropdown" role="menu"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  {{items.name}}</a>
-    <ul ng-if="items.location.pop" class="dropdown-menu navmenu-nav " role="menu" ng-include="'submenu.template'"></ul>
+  <li ng-click="isActive(this)" ><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true" ></span>  Configure menu</a></li>
 
+  <li ng-repeat="items in menuItemsList" ng-if="items !== null" >
+    <a href="#" ng-if="!items.location.pop && !items.submenu" ui-sref="{{items.state}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  {{items.name}}<b class="caret-right pull-right"></b></a>
+    <a href="#" ng-if="items.location.pop && !items.submenu" class="dropdown-toggle"  data-toggle="dropdown" role="menu"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  {{items.name}}<b class="caret-right pull-right" ></b></a>
+    <ul ng-if="items.location.pop" class="dropdown-menu navmenu-nav " role="menu" ng-include="'submenu.template'"></ul>
   </li>
 
 
@@ -13,8 +13,8 @@
 
 <script type="text/ng-template" id="submenu.template">
   <li ng-repeat="items in items.location">
-    <a href="#" ng-if="!items.location.pop" ui-sref="{{items.state}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  {{items.name}}</a>
-    <a href="#" ng-if="items.location.pop" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  {{items.name}}</a>
+    <a href="#" ng-if="!items.location.pop" ui-sref="{{items.state}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  {{items.name}}<b class="caret-right pull-right"></b></a>
+    <a href="#" ng-if="items.location.pop" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  {{items.name}}<b class="caret-right pull-right"></b></a>
     <ul ng-if="items.location.pop" class="dropdown-menu navmenu-nav" ng-include="'submenu.template'"></ul>
   </li>
 </script>

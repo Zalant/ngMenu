@@ -1,0 +1,170 @@
+//colors
+$white: #fff;
+$lightgray: #696b75;
+$gray: #222;
+$blue: #90c7fd;
+$darkgray: #333;
+$lightblue: #e9f3fd;
+
+//fonts
+$font_0: Helvetica Neue;
+$font_1: Helvetica;
+$font_2: Arial;
+$font_3: sans-serif;
+
+
+%extend_1 {
+  color: $blue;
+  background-color: $gray;
+  border-color: $gray;
+}
+
+
+%extend_2 {
+  color: $blue;
+  background-color: $gray;
+  border-color: $gray;
+  background-image: none;
+}
+
+
+%extend_3 {
+  color: $blue;
+  background-color: $gray;
+  border-color: $gray;
+}
+
+
+.buttonleft {
+  float: left;
+}
+.buttonright {
+  float: right;
+}
+.dropdown-menu {
+  font-size: 16px;
+  &:hover {
+    display: block;
+  }
+}
+.btn-black {
+  font-size: 16px;
+  color: $white;
+  background-color: $lightgray;
+  border-color: $gray;
+  &:focus {
+    @extend %extend_1;
+  }
+  &.focus {
+    @extend %extend_1;
+  }
+  &:hover {
+    color: $blue;
+    background-color: $gray;
+    border-color: $gray;
+  }
+  &:active {
+    @extend %extend_2;
+    &:hover {
+      @extend %extend_3;
+    }
+    &:focus {
+      @extend %extend_3;
+    }
+    &.focus {
+      @extend %extend_3;
+    }
+  }
+  &.active {
+    @extend %extend_2;
+    &:hover {
+      @extend %extend_3;
+    }
+    &:focus {
+      @extend %extend_3;
+    }
+    &.focus {
+      @extend %extend_3;
+    }
+  }
+  &.disabled {
+    &:hover {
+      background-color: $gray;
+      border-color: $gray;
+    }
+    &:focus {
+      background-color: $gray;
+      border-color: $gray;
+    }
+    &.focus {
+      background-color: $gray;
+      border-color: $gray;
+    }
+  }
+  .badge {
+    color: $blue;
+    background-color: $white;
+  }
+}
+.btn-black[disabled] {
+  &:hover {
+    background-color: $gray;
+    border-color: $gray;
+  }
+  &:focus {
+    background-color: $gray;
+    border-color: $gray;
+  }
+  &.focus {
+    background-color: $gray;
+    border-color: $gray;
+  }
+}
+body {
+  font-family: $font_0, $font_1, $font_2, $font_3;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: $darkgray;
+  background-color: $lightblue;
+}
+.caret-right {
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-left: 4px solid $blue;
+  display: inline-block;
+  height: 0;
+  opacity: 1;
+  vertical-align: middle;
+  width: 0;
+  content: "";
+  margin-top: 6px;
+}
+.open > .dropdown-toggle.btn-black {
+  @extend %extend_2;
+  &:hover {
+    @extend %extend_3;
+  }
+  &:focus {
+    @extend %extend_3;
+  }
+  &.focus {
+    @extend %extend_3;
+  }
+}
+fieldset[disabled] .btn-black {
+  &:hover {
+    background-color: $gray;
+    border-color: $gray;
+  }
+  &:focus {
+    background-color: $gray;
+    border-color: $gray;
+  }
+  &.focus {
+    background-color: $gray;
+    border-color: $gray;
+  }
+}
+.navbar-inverse .navbar-offcanvas .navmenu-nav > li > a {
+  color: $blue;
+}
