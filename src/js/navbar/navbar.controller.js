@@ -116,7 +116,7 @@
       $scope.liNumber = -1;
       window.onkeydown = function (e) {
         var li = document.getElementsByTagName('li');
-        console.log(li.length);
+        // console.log(li.length);
 
         // for(var k=0; k<li.length; k++){
         //
@@ -124,7 +124,7 @@
         // }
 
         var evt = e.keyCode;
-        console.log(evt);
+        // console.log(evt);
         switch (evt) {
 
           //вниз
@@ -139,7 +139,7 @@
               ++$scope.liNumber;
               li[$scope.liNumber].classList.add('active');
 
-              console.log($scope.liNumber);
+              // console.log($scope.liNumber);
             }
             break;
           }
