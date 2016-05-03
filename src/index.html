@@ -28,51 +28,19 @@
 <link href="style/system/jasny-bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="style/custom/navbar.style.css" rel="stylesheet" type="text/css"/>
 
-       <script>
-  $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
-        // Avoid following the href location when clicking
-        event.preventDefault();
-        // Avoid having the menu to close when clicking
-        event.stopPropagation();
-    })
-
-
-</script>
-
-
-<!--<script>-->
-  <!--function setActive(elem) {-->
-    <!--var a = document.getElementsByTagName('li')-->
-   <!--for (var i = 0; i < li.length; i++) {-->
-     <!--li[i].classList.remove('active')-->
-   <!--}-->
-    <!--elem.classList.add('active');-->
-<!--}-->
-<!--</script>-->
-
-<script>
-
-  $("a").click(function(){
-    $("li").addClass("active");
-    console.log('err')
-  });
-</script>
-
-
 
 <div ng-controller="menuCtrl" area-expanded="true">
   <div ng-controller="changesideCtrl" area-expanded="true">
     <div>
       <button type="button" class="btn btn-black {{$storage.savedbuttonside}} " data-toggle="offcanvas"
-              data-target="#exampleMenu" data-canvas="body"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>  Menu
+              data-target="#exampleMenu" data-canvas="body"><span class="glyphicon glyphicon-list"
+                                                                  aria-hidden="true"></span> Menu
       </button>
     </div>
 
-    <div id="exampleMenu" navbarmenu menu-items-list= "menuList" class="{{$storage.savedside}}"></div>
+    <div id="exampleMenu" navbarmenu menu-items-list="menuList" class="{{$storage.savedside}}"></div>
 
     <ui-view></ui-view>
-
-
   </div>
 </div>
 

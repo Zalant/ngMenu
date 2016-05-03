@@ -109,13 +109,81 @@
         return;
       };
 
-       $scope.setActive = function(elem) {
-        var li = document.getElementsByTagName('li')
-    for (var i = 0; i < li.length; i++) {
-      li[i].classList.remove('active')
-    }
-        elem.classList.add('active');
-      }
+
+      //Обработчик кнопок. При нажатии добавляется стиль active к li
+      //liNumber определяет текущее положение active
+
+      $scope.liNumber = -1;
+      window.onkeydown = function (e) {
+        var li = document.getElementsByTagName('li');
+        console.log(li.length);
+
+        // for(var k=0; k<li.length; k++){
+        //
+        //   if ($(li[k]).children[2] == 'ul'){li[k].classList.add('secondlvl')} else {li[k].classList.add('firstlvl')}
+        // }
+
+        var evt = e.keyCode;
+        console.log(evt);
+        switch (evt) {
+
+          //вниз
+
+          case 40 :
+          {
+
+            if ($scope.liNumber != -1) {
+              li[$scope.liNumber].classList.remove('active');
+            }
+            if ($scope.liNumber != li.length / 2 + 1) {
+              ++$scope.liNumber;
+              li[$scope.liNumber].classList.add('active');
+
+              console.log($scope.liNumber);
+            }
+            break;
+          }
+
+          //вверх
+
+          case 38:
+          {
+            if ($scope.liNumber != -1) {
+              li[$scope.liNumber].classList.remove('active');
+            }
+            --$scope.liNumber;
+            li[$scope.liNumber].classList.add('active');
+
+            console.log($scope.liNumber);
+            break;
+          }
+
+
+          //вправо (открывает подпункты)
+
+          case 39:
+          {
+            li[$scope.liNumber].classList.add('ng-scope', 'active', 'open');
+            break;
+          }
+
+          //влево (скрывает подпункты)
+
+          case 37:
+          {
+            li[$scope.liNumber].classList.remove('ng-scope', 'open');
+            break;
+          }
+          case 13:
+          {
+
+            $(li[$scope.liNumber]).children().click();
+            break;
+          }
+
+        }
+
+      };
 
 
       $scope.menuList = menuItems;

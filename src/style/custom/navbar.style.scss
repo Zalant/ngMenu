@@ -1,67 +1,52 @@
-//colors
-$white: #fff;
-$lightgray: #696b75;
-$gray: #222;
-$blue: #90c7fd;
-$darkgray: #333;
-$lightblue: #e9f3fd;
+$color_0: #90c7fd;
+$color_1: #222;
+$color_2: #fff;
+$color_3: #696b75;
+$color_4: #333;
+$color_5: #e9f3fd;
+$color_6: #080808;
+$color_7: #999;
+$color_8: #2a2b2b;
+$color_9: #000;
+$color_10: #444;
 
-//fonts
 $font_0: Helvetica Neue;
 $font_1: Helvetica;
 $font_2: Arial;
 $font_3: sans-serif;
 
-
 %extend_1 {
-  color: $blue;
-  background-color: $gray;
-  border-color: $gray;
+  color: $color_0;
+  background-color: $color_1;
+  border-color: $color_1;
 }
 
-
 %extend_2 {
-  color: $blue;
-  background-color: $gray;
-  border-color: $gray;
+  color: $color_0;
+  background-color: $color_1;
+  border-color: $color_1;
   background-image: none;
 }
 
-
 %extend_3 {
-  color: $blue;
-  background-color: $gray;
-  border-color: $gray;
+  color: $color_0;
+  background-color: $color_1;
+  border-color: $color_1;
 }
 
-
-.buttonleft {
-  float: left;
-}
-.buttonright {
-  float: right;
-}
-.dropdown-menu {
-  font-size: 16px;
-  &:hover {
-    display: block;
-  }
-}
 .btn-black {
   font-size: 16px;
-  color: $white;
-  background-color: $lightgray;
-  border-color: $gray;
+  color: $color_2;
+  background-color: $color_3;
+  border-color: $color_1;
   &:focus {
     @extend %extend_1;
   }
   &.focus {
     @extend %extend_1;
-  }
-  &:hover {
-    color: $blue;
-    background-color: $gray;
-    border-color: $gray;
+    &:active {
+      @extend %extend_3;
+    }
   }
   &:active {
     @extend %extend_2;
@@ -69,9 +54,6 @@ $font_3: sans-serif;
       @extend %extend_3;
     }
     &:focus {
-      @extend %extend_3;
-    }
-    &.focus {
       @extend %extend_3;
     }
   }
@@ -87,50 +69,73 @@ $font_3: sans-serif;
       @extend %extend_3;
     }
   }
+  &:hover {
+    color: $color_0;
+    background-color: $color_1;
+    border-color: $color_1;
+  }
   &.disabled {
     &:hover {
-      background-color: $gray;
-      border-color: $gray;
+      background-color: $color_1;
+      border-color: $color_1;
     }
     &:focus {
-      background-color: $gray;
-      border-color: $gray;
+      background-color: $color_1;
+      border-color: $color_1;
     }
     &.focus {
-      background-color: $gray;
-      border-color: $gray;
+      background-color: $color_1;
+      border-color: $color_1;
     }
   }
   .badge {
-    color: $blue;
-    background-color: $white;
+    color: $color_0;
+    background-color: $color_2;
   }
 }
+
+.buttonleft {
+  float: left;
+}
+
+.buttonright {
+  float: right;
+}
+
+.dropdown-menu {
+  font-size: 16px;
+  &:hover {
+    display: block;
+  }
+}
+
 .btn-black[disabled] {
   &:hover {
-    background-color: $gray;
-    border-color: $gray;
+    background-color: $color_1;
+    border-color: $color_1;
   }
   &:focus {
-    background-color: $gray;
-    border-color: $gray;
+    background-color: $color_1;
+    border-color: $color_1;
   }
   &.focus {
-    background-color: $gray;
-    border-color: $gray;
+    background-color: $color_1;
+    border-color: $color_1;
   }
 }
+
 body {
   font-family: $font_0, $font_1, $font_2, $font_3;
   font-size: 16px;
   line-height: 1.42857143;
-  color: $darkgray;
-  background-color: $lightblue;
+  color: $color_4;
+  background-color: $color_5;
 }
+
 .caret-right {
   border-bottom: 4px solid transparent;
   border-top: 4px solid transparent;
-  border-left: 4px solid $blue;
+  border-left: 4px solid $color_0;
   display: inline-block;
   height: 0;
   opacity: 1;
@@ -139,6 +144,120 @@ body {
   content: "";
   margin-top: 6px;
 }
+
+.navmenu-inverse {
+  background-color: $color_1;
+  border-color: $color_6;
+  .navmenu-brand {
+    color: $color_7;
+    &:hover {
+      color: $color_2;
+      background-color: transparent;
+    }
+    &:focus {
+      color: $color_2;
+      background-color: transparent;
+    }
+  }
+  .navmenu-text {
+    color: $color_7;
+  }
+  .navmenu-nav {
+    > {
+      .dropdown > a {
+        .caret {
+          border-top-color: $color_7;
+          border-bottom-color: $color_7;
+        }
+        &:hover .caret {
+          border-top-color: $color_2;
+          border-bottom-color: $color_2;
+        }
+        &:focus .caret {
+          border-top-color: $color_2;
+          border-bottom-color: $color_2;
+        }
+      }
+      .open > a {
+        color: $color_2;
+        background-color: $color_8;
+        &:hover {
+          color: $color_2;
+          background-color: $color_8;
+          .caret {
+            border-top-color: $color_2;
+            border-bottom-color: $color_2;
+          }
+        }
+        &:focus {
+          color: $color_2;
+          background-color: $color_8;
+          .caret {
+            border-top-color: $color_2;
+            border-bottom-color: $color_2;
+          }
+        }
+        .caret {
+          border-top-color: $color_2;
+          border-bottom-color: $color_2;
+        }
+      }
+      .active > a {
+        color: $color_2;
+        background-color: $color_6;
+        &:hover {
+          color: $color_2;
+          background-color: $color_6;
+        }
+        &:focus {
+          color: $color_2;
+          background-color: $color_6;
+        }
+      }
+      .disabled > a {
+        color: $color_10;
+        background-color: transparent;
+        &:hover {
+          color: $color_10;
+          background-color: transparent;
+        }
+        &:focus {
+          color: $color_10;
+          background-color: transparent;
+        }
+      }
+    }
+    &.dropdown-menu {
+      background-color: $color_8;
+      > {
+        .divider {
+          background-color: $color_1;
+        }
+        .active > a {
+          background-color: $color_9;
+          &:hover {
+            background-color: $color_9;
+          }
+          &:focus {
+            background-color: $color_9;
+          }
+        }
+      }
+    }
+    > li > a {
+      color: $color_0;
+      &:hover {
+        color: $color_2;
+        background-color: transparent;
+      }
+      &:focus {
+        color: $color_2;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
 .open > .dropdown-toggle.btn-black {
   @extend %extend_2;
   &:hover {
@@ -151,20 +270,131 @@ body {
     @extend %extend_3;
   }
 }
+
 fieldset[disabled] .btn-black {
   &:hover {
-    background-color: $gray;
-    border-color: $gray;
+    background-color: $color_1;
+    border-color: $color_1;
   }
   &:focus {
-    background-color: $gray;
-    border-color: $gray;
+    background-color: $color_1;
+    border-color: $color_1;
   }
   &.focus {
-    background-color: $gray;
-    border-color: $gray;
+    background-color: $color_1;
+    border-color: $color_1;
   }
 }
-.navbar-inverse .navbar-offcanvas .navmenu-nav > li > a {
-  color: $blue;
+
+.navbar-inverse .navbar-offcanvas {
+  background-color: $color_1;
+  border-color: $color_6;
+  .navmenu-brand {
+    color: $color_7;
+    &:hover {
+      color: $color_2;
+      background-color: transparent;
+    }
+    &:focus {
+      color: $color_2;
+      background-color: transparent;
+    }
+  }
+  .navmenu-text {
+    color: $color_7;
+  }
+  .navmenu-nav {
+    > {
+      .dropdown > a {
+        .caret {
+          border-top-color: $color_7;
+          border-bottom-color: $color_7;
+        }
+        &:hover .caret {
+          border-top-color: $color_2;
+          border-bottom-color: $color_2;
+        }
+        &:focus .caret {
+          border-top-color: $color_2;
+          border-bottom-color: $color_2;
+        }
+      }
+      .open > a {
+        color: $color_2;
+        background-color: $color_8;
+        &:hover {
+          color: $color_2;
+          background-color: $color_8;
+          .caret {
+            border-top-color: $color_2;
+            border-bottom-color: $color_2;
+          }
+        }
+        &:focus {
+          color: $color_2;
+          background-color: $color_8;
+          .caret {
+            border-top-color: $color_2;
+            border-bottom-color: $color_2;
+          }
+        }
+        .caret {
+          border-top-color: $color_2;
+          border-bottom-color: $color_2;
+        }
+      }
+      .active > a {
+        color: $color_2;
+        background-color: $color_6;
+        &:hover {
+          color: $color_2;
+          background-color: $color_6;
+        }
+        &:focus {
+          color: $color_2;
+          background-color: $color_6;
+        }
+      }
+      .disabled > a {
+        color: $color_10;
+        background-color: transparent;
+        &:hover {
+          color: $color_10;
+          background-color: transparent;
+        }
+        &:focus {
+          color: $color_10;
+          background-color: transparent;
+        }
+      }
+    }
+    &.dropdown-menu {
+      background-color: $color_8;
+      > {
+        .divider {
+          background-color: $color_1;
+        }
+        .active > a {
+          background-color: $color_9;
+          &:hover {
+            background-color: $color_9;
+          }
+          &:focus {
+            background-color: $color_9;
+          }
+        }
+      }
+    }
+    > li > a {
+      color: $color_0;
+      &:hover {
+        color: $color_2;
+        background-color: transparent;
+      }
+      &:focus {
+        color: $color_2;
+        background-color: transparent;
+      }
+    }
+  }
 }
