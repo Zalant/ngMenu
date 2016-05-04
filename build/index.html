@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="navbar">
+<html>
 <head>
   <meta charset="utf-8">
   <title>dsrproject</title>
@@ -14,7 +14,7 @@
 <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
 
-<div ng-controller="menuCtrl" area-expanded="true">
+<div ng-app="navbar" ng-controller="menuCtrl" area-expanded="true">
   <div ng-controller="changesideCtrl" area-expanded="true">
     <div>
       <button type="button" class="btn btn-black {{$storage.savedbuttonside}} " data-toggle="offcanvas"
@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <div id="exampleMenu" navbarmenu menu-items-list="menuList" class="{{$storage.savedside}}"></div>
+    <div id="exampleMenu" navbarmenu menu-items-list="mymenu" class="{{$storage.savedside}}"></div>
 
     <ui-view></ui-view>
   </div>

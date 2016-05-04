@@ -1,7 +1,7 @@
 'use strict';
 (function (angular) {
   angular.module('navbar')
-    .directive('navbarmenu', ['$state', function ($state) {
+    .directive('navbarmenu', ['$state', '$localStorage', function ($state, $localStorage) {
       return {
         restrict: 'A',
         scope: {menuItemsList: '='},
@@ -11,7 +11,6 @@
           elem.attr('role', 'navigation');
 
           $scope.states = $state;
-
 
           var menuItems = [];
 
@@ -96,6 +95,8 @@
           //liNumber определяет текущее положение active
 
           $scope.liNumber = -1;
+
+
           window.onkeydown = function (e) {
             var li = document.getElementsByTagName('li');
             // console.log(li.length);
@@ -166,6 +167,8 @@
             }
 
           };
+
+
         }
       };
     }])

@@ -786,16 +786,16 @@ if (typeof jQuery === 'undefined') {
       var $parent       = getParent($this)
       var relatedTarget = { relatedTarget: this }
 
-      if (!$parent.hasClass('open')) return
+       if (!$parent.hasClass('open')) return
 
       if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
 
-      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+       $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
 
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
-      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+       $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
     })
   }
 
@@ -807,10 +807,10 @@ if (typeof jQuery === 'undefined') {
     var $parent  = getParent($this)
     var isActive = $parent.hasClass('open')
 
-    clearMenus()
+     // clearMenus()
 
     if (!isActive) {
-      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) 
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length)
       {
         // if mobile we use a backdrop because click events don't delegate
         $(document.createElement('div'))
@@ -901,7 +901,7 @@ if (typeof jQuery === 'undefined') {
   // ===================================
 
   $(document)
-    .on('click.bs.dropdown.data-api', clearMenus)
+     .on('click.bs.dropdown.data-api', clearMenus)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
@@ -2360,8 +2360,8 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($spy, data)
     })
   })
-  
- 
+
+
 
 
 }(jQuery);
