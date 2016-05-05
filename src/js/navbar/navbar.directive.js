@@ -91,14 +91,11 @@
           };
 
 
-          //Обработчик кнопок. При нажатии добавляется стиль active к li
-          //liNumber определяет текущее положение active
-
-          $scope.liNumber = -1;
+          $scope.aNumber = -1;
 
 
           window.onkeydown = function (e) {
-            var li = document.getElementsByTagName('li');
+            var a = document.getElementsByTagName('a');
             // console.log(li.length);
 
             // for(var k=0; k<li.length; k++){
@@ -107,6 +104,19 @@
             // }
 
             var evt = e.keyCode;
+
+            var checkChild = function () {
+              for (var i = 0; i < $(a[$scope.aNumber]).parent().children('ul').children.length; i++) {
+                console.log($(a[$scope.aNumber]).parent().children('ul').children[0].tagName);
+                if ($(a[$scope.aNumber]).parent().children('ul').children[i].hasClass('dropdown-toggle')) {
+                  checkChild()
+                }
+
+                ++$scope.aNumber;
+              }
+            }
+
+
             // console.log(evt);
             switch (evt) {
 
@@ -115,15 +125,35 @@
               case 40 :
               {
 
-                if ($scope.liNumber != -1) {
-                  li[$scope.liNumber].classList.remove('active');
-                }
-                if ($scope.liNumber != li.length / 2 + 1) {
-                  ++$scope.liNumber;
-                  li[$scope.liNumber].classList.add('active');
 
-                  // console.log($scope.liNumber);
+                if ($scope.aNumber != -1) {
+                  $(a[$scope.aNumber]).parent().removeClass('active');
                 }
+
+                if ($(a[$scope.aNumber]).hasClass('dropdown-toggle')) {
+                  if ($(a[$scope.aNumber]).parent().hasClass('open')) {
+                    console.log('if');
+                    ++$scope.aNumber;
+                    $(a[$scope.aNumber]).parent().addClass('active');
+                  }
+                  else {
+                    console.log('else');
+                    var element = $(a[$scope.aNumber]).parent('li');
+                    console.log(element);
+                    var count = element.find('li');
+                    for (var i = 0; i < count.length; i++) {
+                      ++$scope.aNumber;
+                    }
+                    ++$scope.aNumber;
+                    $(a[$scope.aNumber]).parent().addClass('active');
+                  }
+                }
+                else {
+                  ++$scope.aNumber;
+                  $(a[$scope.aNumber]).parent().addClass('active');
+                }
+
+
                 break;
               }
 
@@ -131,13 +161,45 @@
 
               case 38:
               {
-                if ($scope.liNumber != -1) {
-                  li[$scope.liNumber].classList.remove('active');
+                if ($scope.aNumber == 0) {
+                  console.log('Выше нельзя');
                 }
-                --$scope.liNumber;
-                li[$scope.liNumber].classList.add('active');
 
-                console.log($scope.liNumber);
+                else {
+                  if ($scope.aNumber != -1) {
+                    $(a[$scope.aNumber]).parent().removeClass('active');
+                  }
+
+
+                  if ($(a[$scope.aNumber - 1]).parent().hasClass('open')) {
+                    --$scope.aNumber;
+                    $(a[$scope.aNumber]).parent().addClass('active');
+                  }
+                  else {
+                    if ($(a[$scope.aNumber - 1]).parent().hasClass('firstlvl')) {
+
+                      --$scope.aNumber;
+                      $(a[$scope.aNumber]).parent().addClass('active');
+                    }
+                    else {
+                      if ($(a[$scope.aNumber - 2]).parent().hasClass('firstlvl')) {
+                        if (!$(a[$scope.aNumber - 1]).parent().hasClass(''))
+                          $scope.aNumber -= 2;
+                        $(a[$scope.aNumber]).parent().addClass('active')
+                      }
+                      else {
+                        while (!($(a[$scope.aNumber]).parent().hasClass('firstlvl') || $(a[$scope.aNumber - 1]).parent().hasClass('open'))) {
+                          --$scope.aNumber;
+                        }
+                        $(a[$scope.aNumber]).parent().addClass('active');
+                      }
+
+                    }
+
+                    $(a[$scope.aNumber]).parent().addClass('active');
+                  }
+                }
+
                 break;
               }
 
@@ -146,7 +208,7 @@
 
               case 39:
               {
-                li[$scope.liNumber].classList.add('ng-scope', 'active', 'open');
+                $(a[$scope.aNumber]).parent().addClass('open');
                 break;
               }
 
@@ -154,13 +216,13 @@
 
               case 37:
               {
-                li[$scope.liNumber].classList.remove('ng-scope', 'open');
+                $(a[$scope.aNumber]).parent().removeClass('open');
                 break;
               }
               case 13:
               {
 
-                $(li[$scope.liNumber]).children().click();
+                $(a[$scope.aNumber]).click();
                 break;
               }
 
